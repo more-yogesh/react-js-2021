@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+.heading{
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.card{
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px 2px black;
+  padding:15px;
+  margin:15px;
+  min-height: 150px;
+  width: 30%;
+  float: left;
+}
+.card-header{
+  min-height: 100px;
+  background: gray;
+  border-bottom: 2px solid black;
+}
+
+.card-footer{
+  background: blue;
+  min-height: 20px;
+}
+.card-footer a {
+  text-align: center;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

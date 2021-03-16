@@ -1,43 +1,40 @@
-import TopTeams from './components/TopTeams.component';
-
-function App() {
-
-    let name = "YOGESH";
-
-    let teams = ['india', 'England', 'USA'];
-
-    let Greeting = () => <h1>Hii</h1>;
-
-    const WelcomeGreet = () => <div>
-        <h1>Welcome React Developers</h1> <h2>(React JS)</h2>
-    </div>;
-
-
-
-
-    const { totalRuns, wins, loose } = {
-        totalRuns: 50520,
-        wins: 680,
-        loose: 266
-    };
-
-
-
-
-    // react provide syntactic sugar: In computer science, syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express.
-
+import React from 'react';
+import Header from './components/Header.component'
+import Card from './components/Card.component'
+import './App.css';
+const App = () => {
+    const products = [
+        {
+            title: 'Shirt',
+            price: 580,
+            id: 1
+        }, {
+            title: 'Shirt 2',
+            price: 580,
+            id: 2
+        }, {
+            title: 'Shirt 3',
+            price: 580,
+            id: 3
+        }, {
+            title: 'Shirt 4',
+            price: 580,
+            id: 4
+        }, {
+            title: 'Shirt 5',
+            price: 580,
+            id: 5
+        }
+    ];
+    // console.log(products.length);
+    const title = 'Easy Commerce';
     return (
         <div>
-            {/* <h1>Hello {name}</h1> */}
-            {/* <h2>{teams.length}</h2> */}
-            {/* <Greeting /> */}
-            {/* <WelcomeGreet /> */}
-            {/* <TopTeams best="INDIA" />
-            <TopTeams best={name} /> */}
-            <h2>Total Runs: {totalRuns}</h2>
-            <h2>Total Wins: {wins}</h2>
-
-            <TopTeams best="India" topTeams={teams} />
+            <Header name={title} />
+            {products.map((value, index)=>{
+                return <Card />;
+            })}
+            
         </div>
     );
 }
