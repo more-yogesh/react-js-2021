@@ -3,6 +3,8 @@ import Header from './components/Header.component'
 import Card from './components/Card.component'
 import MyNavigation from './components/MyNavigation.component';
 import EventManager from './components/EventManager.component';
+import CounterState from './components/CounterState.component';
+import LiveTypingState from './components/LiveTypingState';
 
 import './App.css';
 const App = () => {
@@ -37,6 +39,7 @@ const App = () => {
 
 
     const checkHeader = (headerTitle) => {
+
         if (headerTitle.length > 0) {
             alert('Title is ' + headerTitle);
         } else {
@@ -52,11 +55,13 @@ const App = () => {
 
     return (
         <div>
+            <LiveTypingState />
+            <CounterState />
             <EventManager />
             <Header name={title} />
             <MyNavigation navigation={nav} />
             {products.map((value, index) => {
-                return <Card name={value.title} price={value.price} id={value.id} />;
+                return <Card key={value.id} name={value.title} price={value.price} id={value.id} />;
             })}
             <button onMouseEnter={() => {
                 checkHeader(title)
